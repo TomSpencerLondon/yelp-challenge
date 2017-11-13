@@ -1,9 +1,9 @@
 # yelp-challenge
 
-As a restauranteur,
-So that I can write a review,
+As a restaurateur,
+So thI can write a review,
 I want to be able to create a new restaurant.
 
-As a restauranteur,
+As a restaurateur,
 so that I can review a restaurant,
 I want to be able to leave a rating & comment on the restaurant page.
