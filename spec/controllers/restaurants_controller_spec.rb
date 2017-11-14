@@ -29,12 +29,12 @@ RSpec.describe RestaurantsController, type: :controller do
   # Restaurant. As you add validations to Restaurant, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { name: 'test name', description: 'test description for restaurant' }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+    { name: '', description: '' }    
+}
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
