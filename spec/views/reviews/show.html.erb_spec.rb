@@ -2,9 +2,14 @@ require 'rails_helper'
 
 RSpec.describe "reviews/show", type: :view do
   before(:each) do
+    @restaurant = assign(:restaurant, Restaurant.create!(
+      :name => "MyString",
+      :description => "MyText"
+    ))
     @review = assign(:review, Review.create!(
       :rating => 2,
-      :review => "MyText"
+      :review => "MyText",
+      :restaurant => @restaurant      
     ))
   end
 
