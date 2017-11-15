@@ -6,6 +6,8 @@
 
 ### Technologies
 
+devise - very simple rails gem for add user sign up/in/out
+
 ### User Stories
 
 ```
