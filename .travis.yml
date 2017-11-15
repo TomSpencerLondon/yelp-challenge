@@ -1,7 +1,16 @@
 language: ruby
 rvm:
- - 2.4.2
-
+- 2.4.2
 before_script:
-  - rake db:setup
-  - rake db:schema:load
+- bundle exec rake db:setup
+- bundle exec rake db:schema:load
+deploy:
+  provider: heroku
+  api_key:
+    secure: MTViEKnSNvvZ+0IINdLVn7Smlr7lCqBBJsHG6Uf0scJbxJ2SWeywjz03NrslxQvmTJk4j+ymVlsrWkyzGZMD/g8VVqUp92jPbKIk7GTNOIeWMqcXneVXtOtL94ShSsy16j5t8I3bcXkLyXtK8prU0m5vxg0MMrrVFp0tIU0ebevTJtTz7AibEGRf1+ZUXJ0yGVwyZ2tBD74NeLUVLG4LBD6yBUYKbWR2Ej3dXKVYELXPhkbCKZwFzt1A2Y024DTYziZDvsXpVncs4dIttNIzWJ/sIe4ZMXfjlN95+lmrRUXNkYrNojDM1zG3jWmxjlvUHwvnX41xJQuYo9GoiY7HyE3nY91YzlC81AOr6vFRnYP1X5F58SAvAgprCO6Iny/7GIQ82jviPlkGH70hjAbixWNCRl1BeNgGGaasU4M0zPIODwy/9eQYp6VT4UPCYXgHSBtaVW0ogf4IoyUCseQnDoATfjDfNGxoupVnkZ8B3NJSahfUKKjW5rMc2CJIRb6DoTRnqg/zm4uymXHAXKGQu+Uiwiot+bBOm/XqAs0WGf/UEMDN+6Krb7q5uqF62hudNcCL2Wr6bws5ZKsVjxNvekzjPAQl6WhzbGcF/UtaUhenXBOsRH8FjL9o86yGOlu2Ev9wqWiiaLuJMMTvsbAFk4FqMDec6Z/4j/E1Ra7FUdo=
+  app: yelp-hatr
+  on:
+    repo: TomSpencerLondon/yelp-challenge
+  run:
+    - "rake db:migrate"
+    - restart
