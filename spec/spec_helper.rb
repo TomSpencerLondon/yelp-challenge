@@ -1,5 +1,7 @@
 require 'simplecov'
 require 'simplecov-console'
+require 'coveralls'
+Coveralls.wear!('rails')
 require 'database_cleaner'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
