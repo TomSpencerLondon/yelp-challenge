@@ -15,3 +15,12 @@ RSpec.describe RestaurantsHelper, type: :helper do
 
   
 end
+
+def add_restaurant
+  visit('/restaurants/new')
+  fill_in :restaurant_name, with: 'KFC'
+  fill_in :restaurant_description, with: 'Finger-licking good'
+  click_button 'Create Restaurant'
+end
+
+
