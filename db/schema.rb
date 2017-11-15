@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171114153045) do
-=======
-ActiveRecord::Schema.define(version: 20171115164846) do
->>>>>>> f5159b1a4637b283671b1cbdbf15e55d482121d9
+ActiveRecord::Schema.define(version: 20171115214323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,11 +20,9 @@ ActiveRecord::Schema.define(version: 20171115164846) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "description"
+    t.string "description"
   end
 
-<<<<<<< HEAD
-=======
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -46,6 +40,4 @@ ActiveRecord::Schema.define(version: 20171115164846) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "reviews", "restaurants"
->>>>>>> f5159b1a4637b283671b1cbdbf15e55d482121d9
 end
