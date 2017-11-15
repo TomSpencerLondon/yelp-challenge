@@ -23,4 +23,3 @@ def add_restaurant
   click_button 'Create Restaurant'
 end
 
-

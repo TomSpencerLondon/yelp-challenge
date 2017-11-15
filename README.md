@@ -6,7 +6,7 @@
 
 ### Technologies
 
-devise - very simple rails gem for add user sign up/in/out
+devise - very simple rails gem for add user sign up, sign in and sign out
 
 ### User Stories
 

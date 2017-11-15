@@ -33,6 +33,11 @@ feature 'login' do
         click_link 'Sign out'
         visit('/restaurants')        
       end
+      
+      scenario 'show restaurant' do
+        click_link 'Show'
+        expect(current_path).to eq('/restaurants/1')
+      end
 
       scenario 'destroy restaurant' do
         click_link 'Destroy'
@@ -42,11 +47,6 @@ feature 'login' do
       scenario 'edit restaurant' do
         click_link 'Edit'
         expect(current_path).to eq('/users/sign_in')
-      end
-
-      scenario 'show restaurant' do
-        click_link 'Show'
-        expect(current_path).to eq('/restaurants/1')
       end
 
     end
