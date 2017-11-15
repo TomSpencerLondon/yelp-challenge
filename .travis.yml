@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+ - 2.4.2
+
+before_script:
+  - rake db:setup
+  - rake db:schema:load
