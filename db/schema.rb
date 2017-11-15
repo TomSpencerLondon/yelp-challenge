@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114151536) do
+ActiveRecord::Schema.define(version: 20171115094031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20171114151536) do
     t.text "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "restaurant_id"
+    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
   end
 
+  add_foreign_key "reviews", "restaurants"
 end
