@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'restuarant' do
+feature 'restaurant' do
   scenario 'can create a restaurant' do
     visit('/restaurants/new')
     fill_in :restaurant_name, with: 'KFC'

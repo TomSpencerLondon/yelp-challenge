@@ -55,3 +55,18 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+def sign_up(email='test@example.com', password='testtest', cpassword='testtest')
+  visit('/')
+  click_link('Sign up')
+  fill_in('Email', with: email)
+  fill_in('Password confirmation', with: cpassword)
+  click_button('Sign up')
+end
+
+def create_restaurant(name="KFC")
+  visit '/restaurants'
+  click_link 'Add a restaurant'
+  fill_in 'Name', with: name
+  click_button 'Create Restaurant'
+end
