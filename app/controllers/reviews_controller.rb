@@ -24,8 +24,8 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
+    p review_params
     @review = Review.new(review_params)
-
     respond_to do |format|
       if @review.save
         format.html { redirect_to restaurant_reviews_url, notice: 'Review was successfully created.' }

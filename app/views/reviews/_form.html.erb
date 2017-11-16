@@ -21,6 +21,10 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :submit, id: :review_submit %>
   </div>
 <% end %>
+
+<script>
+  reviews.attachEventListeners();
+</script>
