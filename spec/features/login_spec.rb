@@ -9,6 +9,7 @@ feature 'login' do
 
     scenario 'sign in/up buttons' do
       expect(page).to have_link('Sign in')
+      expect(page).to have_link('Sign up')
     end
 
     scenario 'sign out button' do
@@ -40,13 +41,11 @@ feature 'login' do
       end
 
       scenario 'destroy restaurant' do
-        click_link 'Destroy'
-        expect(current_path).to eq('/users/sign_in')
+        expect(page).to_not have_link('Destroy')
       end
 
       scenario 'edit restaurant' do
-        click_link 'Edit'
-        expect(current_path).to eq('/users/sign_in')
+        expect(page).to_not have_link('Edit')
       end
 
     end

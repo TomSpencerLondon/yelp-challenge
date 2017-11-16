@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :reviews
-  resources :restaurants
+  resources :restaurants do
+    resources :reviews
+  end
   root to: 'welcome#index'
 end
