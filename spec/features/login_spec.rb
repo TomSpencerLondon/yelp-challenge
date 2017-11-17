@@ -36,7 +36,7 @@ feature 'login' do
       end
       
       scenario 'show restaurant' do
-        click_link 'Show'
+        click_link 'KFC'
         expect(current_path).to eq('/restaurants/1')
       end
 

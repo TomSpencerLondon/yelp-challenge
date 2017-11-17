@@ -9,7 +9,7 @@ feature 'reviews' do
   end
 
   scenario 'can leave a review on a restaurant page' do
-    click_link 'Show'
+    click_link 'KFC'
     expect(page).to have_link('Add review')
   end
 

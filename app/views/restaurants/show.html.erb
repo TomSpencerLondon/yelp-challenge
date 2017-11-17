@@ -15,7 +15,7 @@
 <%= render 'reviews/form', review: @review %>
 <%= link_to 'Add review', new_restaurant_review_path(@restaurant) %>
 
-<% if current_user && current_user.id == restaurant.user_id %>
-          <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-          <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+<% if current_user && current_user.id == @restaurant.user_id %>
+  <td><%= link_to 'Edit', edit_restaurant_path(@restaurant) %></td>
+  <td><%= link_to 'Destroy', @restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
