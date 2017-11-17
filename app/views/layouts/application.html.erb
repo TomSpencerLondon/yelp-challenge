@@ -2,25 +2,44 @@
 <html>
   <head>
     <title>Yelp</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag    'application', media: 'all' %>
+      <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Restaurants</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">  
-        <% if user_signed_in? %>
-          <li><%= link_to('Sign out', destroy_user_session_path, method: :delete)%></li>
-        <% else %>
-          <li><%= link_to('Sign in', new_user_session_path) %></li>
-          <li><%= link_to('Sign up', new_user_registration_path)%></li>
-        <% end %>
-        </ul>
-      </div>
-    </nav>
-    <a href='/restaurants'><strong>Restaurants</strong></a>
-    <%= yield %>
+    <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Restaurants</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">  
+              <% if user_signed_in? %>
+                <li><%= link_to('Sign out', destroy_user_session_path, method: :delete)%></li>
+              <% else %>
+                <li><%= link_to('Sign in', new_user_session_path) %></li>
+                <li><%= link_to('Sign up', new_user_registration_path)%></li>
+              <% end %>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <% if user_signed_in? %>
+                <li><%= link_to('Sign out', destroy_user_session_path, method: :delete)%></li>
+              <% else %>
+                <li><%= link_to('Sign in', new_user_session_path) %></li>
+                <li><%= link_to('Sign up', new_user_registration_path)%></li>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <script>
+      $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+      })
+    </script>
   </body>
 </html>

@@ -2,31 +2,22 @@
 
 <h1>Restaurants</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.description %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Reviews', restaurant_reviews_path(restaurant) %></td>
-        <% if current_user && current_user.id == restaurant.user_id %>
-          <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-          <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @restaurants.each do |restaurant| %>
+  <div class="row">
+    <div class="col s12 m6 l4 offset-m3 offset-l4">
+      <div>
+        <%= link_to restaurant.name, restaurant %>
+      </div>
+      <div>
+        <%= restaurant.description %>
+      </div>
+      <div>
+        <%= link_to 'Reviews', restaurant_reviews_path(restaurant) %>
+      </div>
+    </div>
+  </div>
+<% end %>
 
-<br>
 
 <%= link_to 'New Restaurant', new_restaurant_path %>
