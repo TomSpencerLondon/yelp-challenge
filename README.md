@@ -4,6 +4,8 @@
 
 # Yelp clone
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/TomSpencerLondon/yelp-challenge.svg)](https://greenkeeper.io/)
+
 ### Technologies
 
 devise - very simple rails gem for add user sign up, sign in and sign out
